@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .back-button {
+    background-color: white;
+    color: #1e56ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #cce0ff;
+  }
+  

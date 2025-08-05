@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+    color: #000000;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+.price-section {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.price-old {
+    text-decoration: line-through;
+    color: gray;
+}
+.price-new {
+    font-weight: bold;
+}
+.stock-info {
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+.order-box {
+    background-color: #3366ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.order-box input[type="number"] {
+    width: 40px;
+    text-align: center;
+}
+.order-box button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-cart {
+    background-color: #00cc00;
+}
+.btn-buy {
+    background-color: #009900;
+}
+.shipping, .payment {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+}
+.shipping p, .payment p {
+    margin: 5px 0;
+}
+.payment button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #3366ff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating {
+    font-size: 20px;
+    color: gold;
+}
+
+
+header h1 {
+margin: 0;
+font-size: 24px;
+}
+header button {
+margin-left: 10px;
+background-color: #3b82f6;
+border: none;
+padding: 8px 12px;
+color: white;
+cursor: pointer;
+border-radius: 4px;
+}
+.container {
+max-width: 1200px;
+margin: auto;
+padding: 20px;
+}
+.slider-wrapper {
+display: flex;
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+gap: 10px;
+}
+.slide-img {
+max-height: 300px;
+object-fit: contain;
+scroll-snap-align: center;
+flex-shrink: 0;
+width: 100%;
+max-width: 100%;
+}
+.slider-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 8px;
+cursor: pointer;
+z-index: 1;
+}
+.slider-btn.left {
+left: 10px;
+}
+.slider-btn.right {
+right: 10px;
+}
+.cart-page {
+display: none;
+}

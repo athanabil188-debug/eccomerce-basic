@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HeyBro Store</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"/>
+      <link rel="icon" type="image/png" href="img/logo.jpeg">
+
+  </head>
+  <body>
+    <header>
+      <h1 class="logo flex items-center gap-2">
+        <img src="img/logo.jpeg" alt="HeyBro Logo" class="h-8 w-8" />HeyBro Store</h1>
+        
+        <div class="nav-buttons">
+          <input 
+          type="text"
+          id="search-input"
+          placeholder="Cari produk..."
+          oninput="searchProducts(this.value)"/>
+          
+          <a href="login.html" class="btn">Login</a>
+          <a href="register.html" class="btn">Register</a>
+          <a href="profil.html" class="btn">profile anda</a>
+          <button class="cart-btn" onclick="showCart()"> 🛒 Keranjang (<span id="cart-count">0</span>) </button>
+        </div>
+      </header>
+
+    <!-- Promo slider -->
+    <div id="promo-slider" class="promo-slider container">
+      <div class="promo-slide active">
+        <img src="img/promo1.png" alt="Promo 1" />
+      </div>
+      <div class="promo-slide">
+        <img src="img/promo2.png" alt="Promo 2" />
+      </div>
+      <div class="promo-slide">
+        <img src="img/promo3.png" alt="Promo 3" />
+      </div>
+    </div>
+
+    <!-- Container utama produk -->
+    <main>
+      <div id="product-list" class="container"></div>
+      <div id="product-detail" class="detail"></div>
+    </main>
+
+    <!-- Halaman Keranjang -->
+    <div id="cart-page" class="cart-page">
+      <h2>Keranjang Belanja</h2>
+      <div id="cart-items" class="container"></div>
+      <button onclick="clearCart()">🗑 Hapus Semua</button>
+      <button class="back-btn" onclick="showProducts()">← Kembali ke Produk</button>
+      <button class="beli-btn" onclick="checkout()">🛒 Beli</button>
+    </div>    
+
+    <form id="checkout-form" class="space-y-4">
+      <div>
+        <label for="nama" class="block mb-1 text-sm font-medium text-gray-700">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required class="w-full rounded border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
+
+      <div>
+        <label for="alamat" class="block mb-1 text-sm font-medium text-gray-700">Alamat Pengiriman</label>
+        <textarea id="alamat" name="alamat" rows="3" required class="w-full rounded border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+      </div>
+
+    <section class="py-10 bg-white">
+    <div class="payment max-w-md mx-auto my-8 p-4 bg-white rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold text-center text-gray-800 mb-4">Metode Pembayaran</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <button class="pay-btn">Dana</button>
+        <button class="pay-btn">OVO</button>
+        <button class="pay-btn">Gopay</button>
+        <button class="pay-btn">BCA</button>
+        <button class="pay-btn">BRI</button>
+        <button class="pay-btn">MANDIRI</button>
+        <button    class="pay-btn">Indomaret</button>
+        <button class="pay-btn">Alfamart</button>
+        <button class="pay-btn col-span-2">COD (Bayar di Tempat)</button>
+      </div>
+    </div>
+    </section>
+    <a href="/simulasi chackout.html" class="block w-full bg-blue-900 text-white py-3 px-4 rounded hover:bg-blue-700 transition duration-300 text-center">
+      Beli Sekarang
+    </a>
+     
+    <!-- Tentang Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h3 class="text-2xl font-bold mb-6 text-center">                                                 Nikmati Mudahnya Belanja Online di HeyBro Store
+          HeyBro Store adalah platform e-commerce yang memudahkan kamu membeli berbagai produk secara online dengan murah,nyaman,cepat,kualitas terbaik,aman,dan pengiriman cepat. Mulai dari baju,televisi,tas,cincin,dll.Ayo tunggu apalagi, temukan juga promo yang tidak kalah menarik. Kami hadir untuk memberikan pengalaman belanja terbaik dengan dukungan ekspedisi terpercaya, metode pembayaran beragam, dan layanan pelanggan yang responsif.HeyBro store menyediakan asuransi perlindungan untuk setiap barang yang kamu beli di HEyBro store. 🎁 Yuk, mulai belanja sekarang dan nikmati kemudahannya hanya di HeyBro Store – Belanja Gaya Bro, Harga Rakyat! </h3>
+          <h3 class="text-2xl font-bold mb-6 text-center">Kenapa Belanja di HeyBro Store?</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <h4 class="text-xl font-semibold mb-2">Harga Terjangkau</h4>
+            <p>Produk-produk berkualitas dengan harga bersahabat di kantong.</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold mb-2">Pengiriman Cepat</h4>
+            <p>Barang sampai tujuan dengan cepat dan aman.</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold mb-2">Promo Menarik</h4>
+            <p>Dapatkan diskon, cashback, dan promo eksklusif setiap hari.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div class="flex space-x-4">
+          <a href="/Tugas Nabil/statuspemesanan.html" class="bg-amber-50 hover:text-blue-400">status pesanan</a>
+          <a href="https:/wa.me/081292517719" class="bg-amber-50 hover:text-blue-400">Contact</a>
+          <a href="#" class="bg-amber-50 hover:text-blue-400">Privacy Policy</a>
+        </div>
+        <p class="mt-4 md:mt-0">&copy; 2025 HeyBro Store. PT. HeyBro store </p>
+      </div>
+    </footer>
+
+    <script src="js/landing.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+ 
